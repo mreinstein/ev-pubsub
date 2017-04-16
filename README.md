@@ -42,11 +42,11 @@ hello from 2: val b
 
 
 ## event loop considerations
-many of the pubsub implementations out there is they immediately invoke published events.
+many pubsub implementations immediately invoke published events.
 
 A problem with this approach is you might end up missing events if they happen before subscribing to them.
 
-`ev-pubsub` gets around this by invoking published events in the next event tick.
+`ev-pubsub` gets around this by invoking published events in the next event tick. example:
 
 ```javascript
 const pubsub = require('ev-pubsub')
@@ -78,7 +78,7 @@ next tick, you'll be able to set up subscribers without worrying about losing me
 
 ## unsubscribe
 
-You may also unregister events, in the event that you need to cleanup or prevent memory leaks:
+You may also unregister event handlers if you need to cleanup or prevent memory leaks:
 
 ```javascript
 const pubsub = require('ev-pubsub')
