@@ -26,7 +26,23 @@
     "next-tick": "^1.0.0",
     "remove-array-items": "0.0.1"
   },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
   "engines": {
     "node": ">= 4"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0"
   }
 }
