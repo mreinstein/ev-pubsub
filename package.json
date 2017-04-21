@@ -24,7 +24,7 @@
   "homepage": "https://github.com/mreinstein/ev-pubsub#readme",
   "dependencies": {
     "next-tick": "^1.0.0",
-    "remove-array-items": "0.0.1"
+    "remove-array-items": "^0.0.1"
   },
   "browserify": {
     "transform": [
