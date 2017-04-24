@@ -1,6 +1,6 @@
 'use strict'
 
-const nextTick    = require('next-tick')
+const nextTick    = require('next-tick-2')
 const removeItems = require('remove-array-items')
 
 
