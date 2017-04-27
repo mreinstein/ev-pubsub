@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/mreinstein/ev-pubsub#readme",
   "dependencies": {
-    "next-tick-2": "^0.0.3",
-    "remove-array-items": "^0.0.1"
+    "next-tick-2": "^1.0.0",
+    "remove-array-items": "^1.0.0"
   },
   "browserify": {
     "transform": [
