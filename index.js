@@ -33,8 +33,13 @@ module.exports = function pubsub() {
     _listeners[topic].push(handler)
   }
 
+  // @param function handler if ommitted, remove all handlers for this topic
   let unsubscribe = function(topic, handler) {
     if (_listeners[topic]) {
+      if (!handler) {
+        _listeners[topic] = []
+        return
+      }
       for(let i=0; i < _listeners[topic].length; i++) {
         if (_listeners[topic][i] === handler) {
           removeItems(_listeners[topic], i, 1)

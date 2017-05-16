@@ -107,3 +107,38 @@ yo! zero arg one arg
 */
 ```
 
+## unsubscribe all handlers for a given topic
+
+```javascript
+const pubsub = require('ev-pubsub')
+
+function myFunc(a) {
+  console.log('yo!', a)
+}
+
+function myFunc2(a) {
+  console.log('yo2!', a)
+}
+
+const a = pubsub()
+
+a.subscribe('some-event', myFunc)
+
+a.subscribe('some-event', myFunc2)
+
+a.publish('some-event', 'ayy')
+
+a.unsubscribe('some-event')
+
+console.log('unsubscribed all...')
+a.publish('some-event', 'beee')
+
+/*
+prints:
+
+yo! ayy
+yo2! ayy
+unsubscribed all...
+*/
+```
+
