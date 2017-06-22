@@ -142,3 +142,29 @@ unsubscribed all...
 */
 ```
 
+
+## once
+
+You may want to only subscribe to one event:
+
+```javascript
+const pubsub = require('ev-pubsub')
+
+function myFunc(a) {
+  console.log('yo!', a)
+}
+
+const a = pubsub()
+
+a.once('some-event', myFunc)
+
+a.publish('some-event', '15')
+a.publish('some-event', '16')
+
+
+/*
+prints:
+
+yo! 15
+*/
+```
