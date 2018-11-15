@@ -1,5 +1,3 @@
-'use strict'
-
 import nextTick    from 'next-tick-2'
 import removeItems from 'remove-array-items'
 
