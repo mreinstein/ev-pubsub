@@ -1,6 +1,6 @@
 {
   "name": "ev-pubsub",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "simplistic pubsub",
   "main": "dist/ev-pubsub.cjs.js",
   "module": "dist/ev-pubsub.esm.js",
