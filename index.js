@@ -1,4 +1,3 @@
-import nextTick    from 'next-tick-2'
 import removeItems from 'remove-array-items'
 
 
@@ -18,7 +17,7 @@ export default function pubsub () {
     // execute these in the next process tick rather than synchronously. this
     // enables subscribing to topics after publishing and not missing events
     // that are published before subscribing in the same event loop
-    nextTick(function () {
+    setTimeout(function () {
       if (_listeners[topic]) {
         for (let i=0; i < _listeners[topic].length; i++) {
           _listeners[topic][i](...args)
@@ -31,7 +30,7 @@ export default function pubsub () {
           removeItems(_onceListeners[topic], i, 1)
         }
       }
-    })
+    }, 0)
   }
 
 
@@ -73,7 +72,7 @@ export default function pubsub () {
 
     return false
   }
-  
+
 
   return Object.freeze({ publish, subscribe, unsubscribe, once })
 }
