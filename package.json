@@ -2,13 +2,9 @@
   "name": "ev-pubsub",
   "version": "2.4.0",
   "description": "simplistic pubsub",
-  "main": "dist/ev-pubsub.cjs.js",
-  "module": "dist/ev-pubsub.esm.js",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "build": "npm-run-all -p build:*",
-    "build:cjs": "rollup index.js -c rollup.config.js --file dist/ev-pubsub.cjs.js --format cjs",
-    "build:esm": "rollup index.js -c rollup.config.js --file dist/ev-pubsub.esm.js --format esm",
-    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,20 +17,18 @@
     "events",
     "emitter"
   ],
-  "author": "Mike Reinstein",
+  "author": "Michael Reinstein",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mreinstein/ev-pubsub/issues"
   },
   "homepage": "https://github.com/mreinstein/ev-pubsub#readme",
   "dependencies": {
-    "remove-array-items": "^1.0.0"
+    "remove-array-items": "^3.0.0"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=12.17"
   },
   "devDependencies": {
-    "npm-run-all": "^4.1.3",
-    "rollup": "^0.67.1"
   }
 }

@@ -7,27 +7,19 @@ npm is flooded with similar modules but I couldn't find any that satisfy all of 
 * doesn't generate memory garbage
 * favors factory pattern over terrible javascript classes
 * events published in next event loop tick
-* works in both commonjs (require) and es modules (import)
+* pure es module
 * simple (< 100 lines of code)
 
 
 so, here we are.
 
 
-## including
+## example
 
 ```javascript
-import pubsub from 'ev-pubsub'  // modern es modules approach
-
-// *OR*
-
-const pubsub = require('ev-pubsub') // commonjs (node) approach
-```
+import pubsub from 'ev-pubsub'
 
 
-## basic usage
- 
-```javascript
 const a = pubsub()
 
 a.subscribe('red-light', function (arg1, arg2, arg3) {
